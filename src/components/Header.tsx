@@ -6,7 +6,7 @@ const Header: React.FC = () => {
     <St.Header>
       <ul>
         <St.Title>Todos</St.Title>
-        <St.SubTitle>React Project</St.SubTitle>
+        <St.SubTitle>React TypeScript Project</St.SubTitle>
       </ul>
     </St.Header>
   );
