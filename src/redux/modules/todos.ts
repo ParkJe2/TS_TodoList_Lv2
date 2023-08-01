@@ -78,13 +78,18 @@ const todos = (state = initialState, action: TodoActionTypes): TodoState => {
         ...state,
         todos: [...state.todos, action.payload],
       };
-    // case ActionTypes.GET_TODO_BY_ID:
-    //   return {
-    //     ...state,
-    //     todos: state.todos.find((t) => {
-    //       return t.id === action.payload;
-    //     }),
-    //   };
+
+    case ActionTypes.GET_TODO_BY_ID:
+      const todoToGet = state.todos.find((todo) => todo.id === action.payload);
+      if (todoToGet) {
+        return {
+          ...state,
+          todos: [todoToGet],
+        };
+      } else {
+        return state;
+      }
+
     case ActionTypes.TOGGLE_STATUS_TODO:
       return {
         ...state,
